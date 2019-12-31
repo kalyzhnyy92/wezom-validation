@@ -1,36 +1,23 @@
 jQuery(($) => {
 
-    //При клике на изображение показать галерею slick
-    $(document).ready(function () {
-        //при клике на ссылку в слайде запускаем галерею
-        $('.card__slider').each(function () {
-            const slider = $(this);
-            const gallery = slider.find('.card__fancybox');
+    $(document).ready(function(){
 
-            slider.on('click', '.card__fancybox', function (e) {
-                e.preventDefault();
-                //узнаём индекс слайда без учёта клонов
-                var totalSlides = +$(this).parents('.slider').slick("getSlick").slideCount,
-                    dataIndex = +$(this).parents('.slide').data('slick-index'),
-                    trueIndex;
-                switch (true) {
-                    case (dataIndex < 0):
-                        trueIndex = totalSlides + dataIndex;
-                        break;
-                    case (dataIndex >= totalSlides):
-                        trueIndex = dataIndex % totalSlides;
-                        break;
-                    default:
-                        trueIndex = dataIndex;
-                }
-                //вызывается элемент галереи, соответствующий индексу слайда
-                $.fancybox.open(gallery, {}, trueIndex);
-                return false;
-            });
+        // Init fancyBox
+        $().fancybox({
+            selector : '.card__wezom:not(.slick-cloned) .card__fancybox',
+            hash     : false
+        });
 
-            slider.slick();
-        })
+        // Init Slick
+        $(".card__slider").slick({
+            slidesToShow   : 1,
+            slidesToScroll : 1,
+            infinite : true,
+            dots     : false
+        });
+
     });
+
 
     //validation форм name и email
     $(document).ready(function() {
@@ -72,6 +59,5 @@ jQuery(($) => {
 
         });
     })
-
 
 });
