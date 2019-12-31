@@ -15,6 +15,9 @@ body {
   margin: 0;
   padding: 0;
 }
+.nav-list a:hover{
+  color: #48494a;
+}
 .nav-list__item{
   margin-left: 25px;
   display: inline-block;
@@ -61,7 +64,8 @@ body {
   padding-bottom: 120px;
 }
 .card{
-  height: 100%;
+  display: block;
+  position: relative;
   max-width: 335px;
   cursor: pointer;
   border-radius: 0;
@@ -75,18 +79,22 @@ body {
   position: relative;
   width: 100%;
   height: 242px;
+  overflow: hidden;
+  z-index: 2;
+  display: block;
 }
-.card__house:before{
+.card__house:after{
+  content: "";
+  display: block;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  content: "";
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-  z-index: 0;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  pointer-events: none!important;
 }
 .slick-next, .slick-next:active, .slick-next:focus, .slick-next:hover, 
 .slick-prev, .slick-prev:active, .slick-prev:focus, .slick-prev:hover {
@@ -116,6 +124,7 @@ body {
   height: 242px;
   object-fit: cover;
   width: 100%;
+  display: block;
 }
 .card__label{
   position: absolute;
@@ -182,6 +191,7 @@ body {
   line-height: 20px;
   width: 100%;
   padding: 15px;
+  z-index: 1;
 }
 .card__text:hover {
   color: red;
@@ -221,7 +231,7 @@ body {
   font-size: 12px;
 }
 .section{
-  background-image: linear-gradient(90deg,#fafafa 50%,#f1f1f1 0);
+  background: linear-gradient(90deg,#fafafa 50%,#f1f1f1 0);
 }
 .section__wrapper{
   background-color: #fafafa;
@@ -324,16 +334,13 @@ body {
   color: #48494a;
   font-size: 14px;
 }
-
 .content__group .error {
   color: #e43030;
 }
-
 .content__mail.error {
   border: 1px solid #e43030;
   outline: 0;
 }
-
 .content__mail {
   background-color: #fff;
   box-shadow: 0 5px 5px 0.5px rgba(23, 24, 25, 0.05);
@@ -346,7 +353,6 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-
 /*.invalid{
   color: red;
   border: 1px solid red;
@@ -357,7 +363,6 @@ body {
   color: red;
   margin: 10px 0;
 }*/
-
 .content__button{
   color: #fff;
   background-color: #ff0000;
