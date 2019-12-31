@@ -4,7 +4,7 @@
   }
 }
 @media screen and (max-width: 1199px) {
-  .wrapper{
+  .footer__wrapper{
     padding-right: 25px;
     padding-left: 25px;
   }
@@ -16,7 +16,7 @@
   .title{
     font-size: 28px;
   }
-  .wrapper{
+  .section__wrapper{
     padding-right: 0;
     padding-left: 0;
   }
