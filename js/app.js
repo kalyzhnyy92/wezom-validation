@@ -2,10 +2,11 @@ jQuery(($) => {
 
     $(document).ready(function(){
 
-        // Init fancyBox
-        $().fancybox({
-            selector : '.card__wezom:not(.slick-cloned) .card__fancybox',
-            hash     : false
+        // Init Fancybox
+        $('[data-fancybox="images"], [data-fancybox="facade"], [data-fancybox="smart"], [data-fancybox="imglist"]').fancybox({
+            thumbs : {
+                autoStart : true
+            }
         });
 
         // Init Slick
